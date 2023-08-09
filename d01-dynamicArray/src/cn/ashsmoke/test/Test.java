@@ -3,6 +3,8 @@ package cn.ashsmoke.test;
 import cn.ashsmoke.pojo.Student;
 import cn.ashsmoke.util.ArrayList;
 
+import java.util.Objects;
+
 public class Test {
     public static void main(String[] args) {
 //        ArrayList array=new ArrayList();

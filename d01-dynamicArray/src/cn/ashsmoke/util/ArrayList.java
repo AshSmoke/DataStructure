@@ -179,8 +179,8 @@ public class ArrayList<E> {
     public void add(int index, E element) {
         rangeCheckForAdd(index);
         ensureCapacity(size + 1);
-        for (int i = size - 1; i >= index; i--) {
-            elements[i + 1] = elements[i];
+        for (int i = size; i > index; i--) {
+            elements[i] = elements[i-1];
         }
         elements[index] = element;
         size++;
@@ -200,6 +200,14 @@ public class ArrayList<E> {
         //释放内存
         elements[--size] = null;
         return elements[index];
+    }
+
+    /**
+     * 删除指定元素
+     * @param element 元素
+     */
+    public void remove(E element){
+        remove(indexOf(element));
     }
 
     @Override
